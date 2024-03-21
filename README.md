@@ -42,5 +42,16 @@ During inference, the LoRA adapter must be combined with its original LLM. The a
 
 QLoRA represents a more memory-efficient iteration of LoRA. QLoRA takes LoRA a step further by also quantizing the weights of the LoRA adapters (smaller matrices) to lower precision (e.g., 4-bit instead of 8-bit). This further reduces the memory footprint and storage requirements. In QLoRA, the pre-trained model is loaded into GPU memory with quantized 4-bit weights, in contrast to the 8-bit used in LoRA. Despite this reduction in bit precision, QLoRA maintains a comparable level of effectiveness to LoRA.
 
+## What is Quantization
+
+In the context of machine learning and neural networks, quantization refers to the process of reducing the precision of numerical values within the model. Typically, this involves reducing the number of bits used to represent each numerical value.
+
+In the statement you provided, the model is being quantized to 4-bit format using the BitsAndBytesConfig. This means that instead of using the typical 32 or 64 bits to represent numerical values (such as weights and activations), only 4 bits will be used.
+
+Quantization is often used to reduce the memory footprint and computational requirements of a neural network model. By using fewer bits to represent each numerical value, the model requires less memory and computational resources to store and process. However, this reduction in precision may lead to a decrease in model accuracy, as the model is less able to represent fine-grained numerical details.
+
+Overall, quantization is a trade-off between model size, computational efficiency, and model accuracy. Different quantization strategies can be employed depending on the specific requirements and constraints of the application.
+
+
 [Link to the article](https://dassum.medium.com/fine-tune-large-language-model-llm-on-a-custom-dataset-with-qlora-fb60abdeba07#:~:text=Fine%2Dtuning%20a%20Large%20Language,in%20the%20fine%2Dtuning%20process)
 
